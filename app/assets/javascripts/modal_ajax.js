@@ -8,12 +8,59 @@ $.ajaxSetup({
 
 $(document).ready(function() {
   console.log("document is ready for use");
+  console.log($('.login_form'));
 
-  $(".login_form").on("ajax:complete", function(e, data, status, xhr) {
-    console.log("ajax is success");
-    console.log(data);
-    console.log(status);
-    console.log(xhr);
-    $("#replaced").effect("highlight");
+  $(".login_form").on("ajax:before", function(event, data, status, xhr) {
+    console.log("ajax:before is fired");
+  });
+
+  $(".login_form").on("ajax:beforeSend", function(event, data, status, xhr) {
+    console.log("ajax:beforeSend is fired");
+  });
+
+  $(".login_form").on("ajax:send", function(event, data, status, xhr) {
+    console.log("ajax:send is fired");
+  });
+
+  $(".login_form").on("ajax:success", function(event, data, status, xhr) {
+    console.log("ajax:success is fired");
+  });
+
+  $(".login_form").on("ajax:error", function(event, data, status, xhr) {
+    console.log("ajax:error is fired");
+  });
+
+  $(".login_form").on("ajax:complete", function(event, data, status, xhr) {
+    console.log("ajax:complete is fired");
+  });
+
+  $(".login_form").on("ajax:aborted:required", function(event, data, status, xhr) {
+    console.log("ajax:aborted:required is fired");
+  });
+
+  $(".login_form").on("ajax:aborted:file", function(event, data, status, xhr) {
+    console.log("ajax:aborted:file is fired");
+  });
+
+
+ $(document).bind("ajaxSend", function(){
+   $("#replaced").hide();
+ }).bind("ajaxComplete", function(){
+   $("#replaced").hide();
+ });
+
+
+  $(document).bind("ajaxSend", function() {
+    console.log("ajaxSend is fired");
+  }).bind("ajaxComplete", function() {
+    console.log(".ajaxComplete is fired");
+  }).bind("ajaxError", function() {
+    console.log(".ajaxError is fired");
+  }).bind("ajaxStart", function() {
+    console.log(".ajaxStart is fired");
+  }).bind("ajaxStop", function() {
+    console.log(".ajaxStop is fired");
+  }).bind("ajaxSuccess", function() {
+    console.log(".ajaxSuccess is fired");
   });
 });
