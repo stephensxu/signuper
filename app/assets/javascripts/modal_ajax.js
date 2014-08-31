@@ -9,11 +9,11 @@ $.ajaxSetup({
 $(document).ready(function() {
   console.log("document is ready for use");
 
-  $('.login_form').on('ajax:complete', function(data, xhr, status) {
+  $(".login_form").on("ajax:complete", function(e, data, status, xhr) {
     console.log("ajax is success");
     console.log(data);
     console.log(status);
     console.log(xhr);
-    $('#replaced').html("I'm replaced");
+    $("#replaced").effect("highlight");
   });
 });
