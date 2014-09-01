@@ -32,6 +32,7 @@ $(document).ready(function() {
       console.log(xhr);
       var $error_message = xhr.responseJSON['errors'];
       console.log($error_message);
-      $('#replaced').html($error_message);
+      $('#login_error').show();
+      $('#login_error').html($error_message);
     });
 });

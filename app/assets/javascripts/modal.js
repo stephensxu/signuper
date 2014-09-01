@@ -36,6 +36,6 @@ $(document).ready(function() {
     // Remember, "this" is the DOM node THAT WAS CLICKED.
 
     $(this).closest('.my-modal').hide();
-    e.preventDefault();
+    $('#login_error').hide();
   });
 });
