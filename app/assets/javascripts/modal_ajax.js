@@ -10,44 +10,14 @@ $.ajaxSetup({
 // 
 
 
-(function() {
-  $(document).ready(function() {
+$(document).ready(function() {
     console.log("signuper is ready");
     console.log($(".login_form"));
 
-    $(document).bind("ajaxComplete", "form.login_form", function(event, xhr, settings) {
-      console.log("ajaxComplete has fired");
+    $(document).bind("ajaxSend", "form.login_form", function(event, xhr, settings) {
+      console.log("ajaxSend has fired");
     });
-
-
-
-    // $(document).bind("ajaxSuccess", "form.login_form", function(event, xhr, settings) {
-    //   var $error_container, $error_container_ul, $login_form;
-    //   console.log("ajaxSuccess has fired");
-    //   $login_form = $(event.data);
-    //   $error_container = $("#error_explanation", $login_form);
-    //   $error_container_ul = $("ul", $error_container);
-    //   $("<p>").html(xhr.responseJSON.title + " savedddddd.").appendTo($login_form);
-    //   if ($("li", $error_container_ul).length) {
-    //     $("li", $error_container_ul).remove();
-    //     return $error_container.hide();
-    //   }
-    // });
-    // return $(document).bind("ajaxError", "form.login_form", function(event, jqxhr, settings, exception) {
-    //   var $error_container, $error_container_ul, $login_form;
-    //   console.log("ajaxError has fired");
-    //   $login_form = $(event.data);
-    //   $error_container = $("#error_explanation", $login_form);
-    //   $error_container_ul = $("ul", $error_container);
-    //   if ($error_container.is(":hidden")) {
-    //     $error_container.show();
-    //   }
-    //   return $.each(jqxhr.responseJSON, function(index, message) {
-    //     return $("<li>").html(message).appendTo($error_container_ul);
-    //   });
-    // });
-  });
-}).call(this);
+});
 
 
 
