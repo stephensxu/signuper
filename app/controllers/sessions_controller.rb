@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         login!(@user)
         format.html { redirect_to users_path }
       else
-        @error_messages = { :password => ["Invalid username or password"] }
+        @error_messages = { :errors => ["Invalid username or password"] }
         format.json { render :json => @error_messages, :status => :unprocessable_entity }
         puts "I'm sending json format of #{@error_messages} to the browser!"
       end
