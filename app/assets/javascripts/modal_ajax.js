@@ -4,22 +4,65 @@ $.ajaxSetup({
   dataType: 'json'
 });
 
+
 // New User
 // 
-$(document).ready ->
-  console.log("document is ready")
+// 
 
-  $(document).bind "ajaxSuccess", "form.thing_form", (event, xhr, settings) ->
-    console.log("ajaxSuccess has fired")
 
-$(document).ready(function() {
-  console.log("document is ready for use");
-  console.log($('.login_form'));
+(function() {
+  $(document).ready(function() {
+    console.log("signuper is ready");
+    console.log($(".login_form"));
 
-  $(document).bind("ajaxSuccess", "form.login_form"), function(event, xhr, settings) {
-    console.log("ajaxSuccess is firing");
-    $thing_form = event.data;
-  };
+    $(document).bind("ajaxComplete", "form.login_form", function(event, xhr, settings) {
+      console.log("ajaxComplete has fired");
+    });
+
+
+
+    // $(document).bind("ajaxSuccess", "form.login_form", function(event, xhr, settings) {
+    //   var $error_container, $error_container_ul, $login_form;
+    //   console.log("ajaxSuccess has fired");
+    //   $login_form = $(event.data);
+    //   $error_container = $("#error_explanation", $login_form);
+    //   $error_container_ul = $("ul", $error_container);
+    //   $("<p>").html(xhr.responseJSON.title + " savedddddd.").appendTo($login_form);
+    //   if ($("li", $error_container_ul).length) {
+    //     $("li", $error_container_ul).remove();
+    //     return $error_container.hide();
+    //   }
+    // });
+    // return $(document).bind("ajaxError", "form.login_form", function(event, jqxhr, settings, exception) {
+    //   var $error_container, $error_container_ul, $login_form;
+    //   console.log("ajaxError has fired");
+    //   $login_form = $(event.data);
+    //   $error_container = $("#error_explanation", $login_form);
+    //   $error_container_ul = $("ul", $error_container);
+    //   if ($error_container.is(":hidden")) {
+    //     $error_container.show();
+    //   }
+    //   return $.each(jqxhr.responseJSON, function(index, message) {
+    //     return $("<li>").html(message).appendTo($error_container_ul);
+    //   });
+    // });
+  });
+}).call(this);
+
+
+
+
+
+
+
+// $(document).ready(function() {
+//   console.log("document is ready for use");
+//   console.log($('.login_form'));
+
+//   $(document).bind("ajaxSuccess", "form.login_form"), function(event, xhr, settings) {
+//     console.log("ajaxSuccess is firing");
+//     $thing_form = event.data;
+//   };
 
 
  //  $(document).bind("ajaxSend", "form.login_form", function(event, xhr, settings) {
@@ -74,4 +117,4 @@ $(document).ready(function() {
  //  }).bind("ajaxComplete", function(){
  //   $("#replaced").hide();
  //  });
-});
+// });
