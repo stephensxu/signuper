@@ -10,6 +10,21 @@ $(document).ready(function() {
   console.log("document is ready for use");
   console.log($('.login_form'));
 
+
+  $(document).bind("ajaxSend", function() {
+    console.log("ajaxSend is fired");
+  }).bind("ajaxComplete", function() {
+    console.log(".ajaxComplete is fired");
+  }).bind("ajaxError", function() {
+    console.log(".ajaxError is fired");
+  }).bind("ajaxStart", function() {
+    console.log(".ajaxStart is fired");
+  }).bind("ajaxStop", function() {
+    console.log(".ajaxStop is fired");
+  }).bind("ajaxSuccess", function() {
+    console.log(".ajaxSuccess is fired");
+  });
+
   $(".login_form").on("ajax:before", function(event, data, status, xhr) {
     console.log("ajax:before is fired");
   });
@@ -45,22 +60,7 @@ $(document).ready(function() {
 
  $(document).bind("ajaxSend", function(){
    $("#replaced").hide();
- }).bind("ajaxComplete", function(){
+  }).bind("ajaxComplete", function(){
    $("#replaced").hide();
- });
-
-
-  $(document).bind("ajaxSend", function() {
-    console.log("ajaxSend is fired");
-  }).bind("ajaxComplete", function() {
-    console.log(".ajaxComplete is fired");
-  }).bind("ajaxError", function() {
-    console.log(".ajaxError is fired");
-  }).bind("ajaxStart", function() {
-    console.log(".ajaxStart is fired");
-  }).bind("ajaxStop", function() {
-    console.log(".ajaxStop is fired");
-  }).bind("ajaxSuccess", function() {
-    console.log(".ajaxSuccess is fired");
   });
 });
