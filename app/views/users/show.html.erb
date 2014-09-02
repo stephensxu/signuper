@@ -1,8 +1,4 @@
-<%= render :partial => "shared/header_all" %>
-
 <h1>Welcome to Signuper, all we do is Signning you up all day long!</h1>
 
-<% if @current_user %>
-  <h2>wohoo, you have signed up!</h2>
-  <%= link_to 'Logout', logout_path %>
-<% end %>
+<h2>wohoo, you have signed up! This is user page</h2>
+<%= link_to 'Logout', logout_path %>

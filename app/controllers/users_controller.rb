@@ -2,8 +2,11 @@ class UsersController < ApplicationController
     before_action :require_authorization!, :only => [:show]
 
   def index
-    current_user
-    render :index
+    if logged_in?
+      redirect_to user_path(@current_user)
+    else
+      render :index
+    end
   end
 
   def show
