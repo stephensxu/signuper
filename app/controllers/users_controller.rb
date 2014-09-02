@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-    before_action :require_authorization!, :only => [:show]
+    # before_action :require_authorization!, :only => [:show]
+    before_action :authenticate_user!
 
   def index
     if logged_in?
