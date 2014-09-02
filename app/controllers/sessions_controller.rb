@@ -4,10 +4,12 @@ class SessionsController < ApplicationController
 
     p "I'm receiving Ajax request" if request.xhr?
 
+
     respond_to do |format|
       if @user && @user.authenticate(session_params[:password])
         login!(@user)
         format.html { redirect_to users_path }
+        format.json { render :json => @user, :status => :created, :location => @user }
       else
         @error_messages = { :errors => ["Invalid username or password"] }
         format.json { render :json => @error_messages, :status => :unprocessable_entity }

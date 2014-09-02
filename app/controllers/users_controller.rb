@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    current_user
+    render :show
   end
 
   def new
