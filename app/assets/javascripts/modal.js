@@ -23,6 +23,7 @@ $(document).ready(function() {
     // See: http://www.asciitable.com/
     if ($('.my-modal').is(':visible') && e.which == 27) {
       $('.my-modal').hide();
+      $('#login_error').hide();
     }
   });
 
