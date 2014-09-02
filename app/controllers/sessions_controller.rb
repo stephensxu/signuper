@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if @user && @user.authenticate(session_params[:password])
         login!(@user)
-        format.html { redirect_to users_path }
+        format.html { redirect_to user_path(@user) }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
         @error_messages = { :errors => ["Invalid username or password"] }
