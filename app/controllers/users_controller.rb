@@ -2,11 +2,16 @@ class UsersController < ApplicationController
     before_action :require_authorization!, :only => [:show]
 
   def index
-    current_user
-    render :index
+    if logged_in?
+      redirect_to user_path(@current_user)
+    else
+      render :index
+    end
   end
 
   def show
+    current_user
+    render :show
   end
 
   def new
@@ -15,11 +20,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      login!(@user)
-      redirect_to users_path
-    else
-      render :new
+
+    respond_to do |format|
+      if @user.save
+        login!(@user)
+        format.html { redirect_to users_path(@user) }
+        format.json { render :json => @user, :status => :created, :location => @user }
+      else
+        format.html { render :new }
+        format.json { render :json => @user.errors, :status => :unprocessable_entity }
+      end
     end
   end
 

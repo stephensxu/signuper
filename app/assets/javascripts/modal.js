@@ -23,6 +23,8 @@ $(document).ready(function() {
     // See: http://www.asciitable.com/
     if ($('.my-modal').is(':visible') && e.which == 27) {
       $('.my-modal').hide();
+      $('#login_error').hide();
+      $('#sign_up_error').hide();
     }
   });
 
@@ -36,6 +38,7 @@ $(document).ready(function() {
     // Remember, "this" is the DOM node THAT WAS CLICKED.
 
     $(this).closest('.my-modal').hide();
-    e.preventDefault();
+    $('#login_error').hide();
+    $('#sign_up_error').hide();
   });
 });
