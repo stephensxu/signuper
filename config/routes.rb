@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   root :to => 'users#index'
 
   devise_for :users
-  # devise_for :admins, :controllers => { :sessions => "admins/sessions" }
   resources :users, :except => :destroy
 
   controller :sessions do
