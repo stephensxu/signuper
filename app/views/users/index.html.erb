@@ -33,7 +33,7 @@
 
   window.fbAsyncInit = function() {
   FB.init({
-    appId      : '{765705726824287}',
+    appId      : 765705726824287,
     cookie     : true,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
@@ -85,13 +85,9 @@
   the FB.login() function when clicked.
 -->
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
 
 <div id="status">
 </div>
-
-<%= render :partial => "shared/header_all" %>
 
 <h1>Welcome to Signuper, all we do is Signning you up all day long!</h1>
 
@@ -99,3 +95,8 @@
   <h2>wohoo, you have signed up!</h2>
   <%= link_to 'Logout', logout_path %>
 <% end %>
+
+<%= render :partial => "shared/header_all" %>
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
