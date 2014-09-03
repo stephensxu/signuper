@@ -1,1 +1,2 @@
 1. In sign up modal dialog, how to append each error message to its appropiate field?
+2. How does device routing work? How am I getting redirected without writting redirectoin code?
