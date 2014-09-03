@@ -20,6 +20,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'jbuilder'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'omniauth-facebook'
+gem 'omniauth'
 
 group :development do
   # Spring speeds up development by keeping your application running in the

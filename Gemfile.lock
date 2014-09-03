@@ -193,6 +193,7 @@ DEPENDENCIES
   faker
   jbuilder
   jquery-rails
+  omniauth
   omniauth-facebook
   pg
   quiet_assets
