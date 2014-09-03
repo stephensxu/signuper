@@ -1,8 +1,8 @@
 // Default to JSON responses for remote calls
 
-$.ajaxSetup({
-  dataType: 'json'
-});
+// $.ajaxSetup({
+//   dataType: 'json'
+// });
 
 
 // New User
@@ -47,7 +47,5 @@ $(document).ready(function() {
     console.log("ajax:error on sign_up_form has fired");
     var $error_message = xhr.responseJSON['password'];
     console.log($error_message);
-    $('#sign_up_error').show();
-    $('#sign_up_error').html($error_message);
   });
 });

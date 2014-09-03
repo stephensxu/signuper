@@ -24,7 +24,6 @@ $(document).ready(function() {
     if ($('.my-modal').is(':visible') && e.which == 27) {
       $('.my-modal').hide();
       $('#login_error').hide();
-      $('#sign_up_error').hide();
     }
   });
 
@@ -39,6 +38,5 @@ $(document).ready(function() {
 
     $(this).closest('.my-modal').hide();
     $('#login_error').hide();
-    $('#sign_up_error').hide();
   });
 });
