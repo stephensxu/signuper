@@ -24,4 +24,6 @@ Rails.application.routes.draw do
     get  '/session',        :action => 'show'
     get '/logout',          :action => 'destroy',       :as => 'logout'
   end
+
+  get '/auth/facebook/callback', :to => 'users#index'
 end
