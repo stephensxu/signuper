@@ -7,12 +7,12 @@
       <%= link_to 'Home', root_url %>
     </li>
     <li>
-      <button data-my-modal="#user_modal" data-toggle="modal" class="button_small">
+      <button data-my-modal="#user_modal" data-toggle="modal" class="button_normal">
         Log in
       </button>
     </li>
     <li>
-      <button data-my-modal="#sign_up_modal" data-toggle="modal" class="button_small">
+      <button data-my-modal="#sign_up_modal" data-toggle="modal" class="button_normal">
         Sign Up
       </button>
     </li>
@@ -25,8 +25,7 @@
       <div class="my-modal-background"></div>
       <div class="my-modal-content">
         <a href="#" class="my-modal-close">[X]</a>
-        <h2>Sign Up</h2>
-        <%= render :partial => "users/sign_up_form", :locals => { :user => User.new } %>
+        <a class="fb_button" href=<%= facebook_login_path %>><i class="fa fa-facebook fa-2x"><span class="text_container">Sign up with Facebook</span></i></a>
       </div>
     </div>
   </div>
@@ -36,9 +35,8 @@
       <div class="my-modal-background"></div>
       <div class="my-modal-content">
         <a href="#" class="my-modal-close">[X]</a>
-        <h2>Log In</h2>
+        <a class="fb_button" href=<%= facebook_login_path %>><i class="fa fa-facebook fa-2x"><span class="text_container">Log in with Facebook</span></i></a>
         <div id="login_error"></div>
-        <%= render :partial => "shared/login_form" %>
       </div>
     </div>
   </div>

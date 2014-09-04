@@ -20,10 +20,11 @@ Rails.application.routes.draw do
   resources :users, :except => :destroy
 
   controller :sessions do
-    post '/login',          :action => 'create',        :as => 'login'
+    post '/login',          :action => 'create',          :as => 'login'
     get  '/session',        :action => 'show'
-    get '/logout',          :action => 'destroy',       :as => 'logout'
+    get '/logout',          :action => 'destroy',         :as => 'logout'
   end
 
   get '/auth/facebook/callback', :to => 'sessions#create'
+  get '/auth/facebook',                                   :as => "facebook_login" 
 end

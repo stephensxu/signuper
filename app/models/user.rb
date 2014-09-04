@@ -28,6 +28,9 @@ class User < ActiveRecord::Base
   # has_secure_password
   
   validates :email, :presence => true, :uniqueness => true, :length => { :minimum => 6 }, :email => true
+  validates :provider, :presence => true
+  validates :uid, :presence => true
+  validates :name, :presence => true
   # validates :password, :presence => true, :length => { :minimum => 6 }, :confirmation => true
   # validates :nickname, :presence => true, :length => { :minimum => 6 }, :uniqueness => true,
   #           :format => { :with => /\A[\w\s]+\z/, message: "nickname cannot contain special characters such as @#$%" }
