@@ -47,5 +47,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  def cache_dir
+    '/tem/projectname-cache'
+  end
 
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
 end
