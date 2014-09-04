@@ -28,6 +28,7 @@
 
 class User < ActiveRecord::Base
   # has_secure_password
+  mount_uploader :avatar, AvatarUploader
   
   validates :email, :presence => true, :uniqueness => true, :length => { :minimum => 6 }, :email => true
   validates :provider, :presence => true
