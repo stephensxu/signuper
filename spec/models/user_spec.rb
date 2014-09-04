@@ -13,6 +13,7 @@
 #  name            :string(255)      not null
 #  first_name      :string(255)
 #  last_name       :string(255)
+#  image           :string(255)
 #  location        :string(255)
 #  gender          :string(255)
 #  verified        :boolean

@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140903234606) do
     t.string   "name",            null: false
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "image"
     t.string   "location"
     t.string   "gender"
     t.boolean  "verified"

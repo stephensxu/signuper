@@ -13,6 +13,7 @@
 #  name            :string(255)      not null
 #  first_name      :string(255)
 #  last_name       :string(255)
+#  image           :string(255)
 #  location        :string(255)
 #  gender          :string(255)
 #  verified        :boolean
@@ -39,6 +40,7 @@ class User < ActiveRecord::Base
       user.name = auth['info']['name']
       user.first_name = auth['info']['first_name']
       user.last_name = auth['info']['last_name']
+      user.image = auth['info']['image']
       user.location = auth['info']['location']
       user.gender = auth['extra']['raw_info']['gender']
       user.verified = auth['info']['verified']
