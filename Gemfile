@@ -21,6 +21,7 @@ gem 'jbuilder'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'omniauth-facebook'
 gem 'omniauth'
+gem 'carrierwave'
 
 group :development do
   # Spring speeds up development by keeping your application running in the
