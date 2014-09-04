@@ -18,6 +18,7 @@
 #  gender          :string(255)
 #  verified        :boolean
 #  link            :string(255)
+#  avatar          :string(255)
 #
 # Indexes
 #
