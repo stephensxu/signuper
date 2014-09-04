@@ -10,8 +10,9 @@ class SessionsController < ApplicationController
       login!(@user)
       redirect_to user_path(@user)
     else
-      render "error"
+      render redirect_to root_url
     end
+    
     # @user = User.find_by_email(session_params[:email])
 
     # p "I'm receiving Ajax request" if request.xhr?

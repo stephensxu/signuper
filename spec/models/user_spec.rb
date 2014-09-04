@@ -4,13 +4,19 @@
 #
 #  id              :integer          not null, primary key
 #  email           :string(255)      not null
-#  password_digest :string(255)
 #  nickname        :string(255)
+#  password_digest :string(255)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  provider        :string(255)
-#  uid             :string(255)
-#  name            :string(255)
+#  provider        :string(255)      not null
+#  uid             :string(255)      not null
+#  name            :string(255)      not null
+#  first_name      :string(255)
+#  last_name       :string(255)
+#  location        :string(255)
+#  gender          :string(255)
+#  verified        :boolean
+#  link            :string(255)
 #
 # Indexes
 #
