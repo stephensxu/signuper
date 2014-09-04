@@ -23,6 +23,7 @@ gem 'omniauth-facebook'
 gem 'omniauth'
 gem 'carrierwave'
 gem 'fog'
+gem 'mini_magick'
 
 group :development do
   # Spring speeds up development by keeping your application running in the
