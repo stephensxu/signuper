@@ -9,3 +9,23 @@
 <h1>Welcome to Signuper, all we do is Signning you up all day long!</h1>
 
 <h2>wohoo, you have signed up! This is user page</h2>
+
+<h1>Kitchen photo</h1>
+<%= form_for(:kitchen, :url => photos_url, :multipart => true) do |f| %>
+  <div class="field">
+    <%= f.file_field :photo %>
+  </div>
+  <div class="buttons">
+    <%= f.submit 'Create Kitchen with photo' %>
+  </div>
+<% end %>
+
+<% if @photos.empty? %>
+  <h3>No photos. :(</h3>
+<% else %>
+  <ul class="kitchen-list">
+    <% @photos.each do |kitchen| %>
+      <li><%= image_tag(kitchen.kitchen.gallery_fit.url) %></li>
+    <% end %>
+  </ul>
+<% end %>

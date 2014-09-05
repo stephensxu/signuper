@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   validates :uid, :presence => true
   validates :name, :presence => true
 
-  has_many :kitchens
+  has_many :photos
 
   # validates :password, :presence => true, :length => { :minimum => 6 }, :confirmation => true
   # validates :nickname, :presence => true, :length => { :minimum => 6 }, :uniqueness => true,
