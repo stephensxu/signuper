@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 
   def show
     current_user
-    @photos = current_user.photos
     render :show
   end
 

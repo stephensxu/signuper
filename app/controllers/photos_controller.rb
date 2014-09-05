@@ -3,6 +3,7 @@ class PhotosController < ApplicationController
     p photo_params
 
     @photo = Photo.new(photo_params)
+    @photo.user = current_user
 
     if @photo.save
       redirect_to user_path(current_user), notice: 'Photo was successfully created.'
