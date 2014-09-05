@@ -16,15 +16,6 @@ ActiveRecord::Schema.define(version: 20140905045143) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "kitchens", force: true do |t|
-    t.string   "photo",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  add_index "kitchens", ["user_id"], name: "index_kitchens_on_user_id", using: :btree
-
   create_table "photos", force: true do |t|
     t.string   "picture_url", null: false
     t.datetime "created_at"

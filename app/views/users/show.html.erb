@@ -10,22 +10,6 @@
 
 <h2>wohoo, you have signed up! This is user page</h2>
 
-<h1>Kitchen photo</h1>
-<%= form_for(:kitchen, :url => photos_url, :multipart => true) do |f| %>
-  <div class="field">
-    <%= f.file_field :photo %>
-  </div>
-  <div class="buttons">
-    <%= f.submit 'Create Kitchen with photo' %>
-  </div>
-<% end %>
+<h1>photo photo</h1>
 
-<% if @photos.empty? %>
-  <h3>No photos. :(</h3>
-<% else %>
-  <ul class="kitchen-list">
-    <% @photos.each do |kitchen| %>
-      <li><%= image_tag(kitchen.kitchen.gallery_fit.url) %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render :partial => "photos/new_photo_form", :locals => { :photo => Photo.new } %>
