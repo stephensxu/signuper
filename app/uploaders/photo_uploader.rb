@@ -18,17 +18,17 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   process :resize_to_fit => [800, 800]
 
-  version :gallery_fit do
-    process resize_to_fit: [300, 300]
-  end
+  # version :gallery_fit do
+  #   process resize_to_fit: [300, 300]
+  # end
 
-  version :gallery_fill do
-    process resize_to_fill: [300, 300]
-  end
+  # version :gallery_fill do
+  #   process resize_to_fill: [300, 300]
+  # end
 
-  version :gallery_limit do
-    process resize_to_limit: [300, 300]
-  end
+  # version :gallery_limit do
+  #   process resize_to_limit: [300, 300]
+  # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
