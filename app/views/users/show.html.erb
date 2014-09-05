@@ -19,7 +19,10 @@
 <% else %>
   <ul class="photo-list">
     <% @photos.each do |photo| %>
-      <li><%= image_tag(photo.picture_url) %></li>
+      <li><%= image_tag(photo.picture_url.gallery_fit.url) %></li>
+      <li><%= image_tag(photo.picture_url.gallery_fill.url) %></li>
+      <li><%= image_tag(photo.picture_url.gallery_limit.url) %></li>
+      <li><%= image_tag(photo.picture_url.gallery_pad.url) %></li>
     <% end %>
   </ul>
 <% end %>
