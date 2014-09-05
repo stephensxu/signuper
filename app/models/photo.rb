@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: photos
+#
+#  id          :integer          not null, primary key
+#  picture_url :string(255)      not null
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Photo < ActiveRecord::Base
   belongs_to :user
 end
