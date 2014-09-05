@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
     @photo.user = current_user
 
     if @photo.save
-      redirect_to user_path(current_user), notice: 'Photo was successfully created.'
+      redirect_to user_path(current_user), :notice => 'Photo was successfully created.'
     else
       render :new
     end
