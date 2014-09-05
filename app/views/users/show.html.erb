@@ -13,3 +13,13 @@
 <h1>photo photo</h1>
 
 <%= render :partial => "photos/new_photo_form", :locals => { :photo => Photo.new } %>
+
+<% if @photos.empty? %>
+  <h3>No photos. :(</h3>
+<% else %>
+  <ul class="photo-list">
+    <% @photos.each do |photo| %>
+      <li><%= image_tag(photo.picture_url) %></li>
+    <% end %>
+  </ul>
+<% end %>
