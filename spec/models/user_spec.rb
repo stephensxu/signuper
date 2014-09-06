@@ -18,11 +18,13 @@
 #  gender          :string(255)
 #  verified        :boolean
 #  link            :string(255)
+#  avatar          :string(255)
 #
 # Indexes
 #
 #  index_users_on_email  (email) UNIQUE
 #
+
 
 
 require 'rails_helper'

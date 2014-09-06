@@ -18,11 +18,13 @@
 #  gender          :string(255)
 #  verified        :boolean
 #  link            :string(255)
+#  avatar          :string(255)
 #
 # Indexes
 #
 #  index_users_on_email  (email) UNIQUE
 #
+
 
 class User < ActiveRecord::Base
   # has_secure_password
@@ -31,6 +33,9 @@ class User < ActiveRecord::Base
   validates :provider, :presence => true
   validates :uid, :presence => true
   validates :name, :presence => true
+
+  has_many :photos
+
   # validates :password, :presence => true, :length => { :minimum => 6 }, :confirmation => true
   # validates :nickname, :presence => true, :length => { :minimum => 6 }, :uniqueness => true,
   #           :format => { :with => /\A[\w\s]+\z/, message: "nickname cannot contain special characters such as @#$%" }

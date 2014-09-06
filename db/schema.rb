@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903234606) do
+ActiveRecord::Schema.define(version: 20140905045143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "photos", force: true do |t|
+    t.string   "picture_url", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",           null: false
@@ -32,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140903234606) do
     t.string   "gender"
     t.boolean  "verified"
     t.string   "link"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

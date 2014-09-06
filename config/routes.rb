@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   resources :users, :except => :destroy
 
+  resources :photos, :only => [:create]
+
   controller :sessions do
     post '/login',          :action => 'create',          :as => 'login'
     get  '/session',        :action => 'show'

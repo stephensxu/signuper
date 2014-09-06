@@ -9,3 +9,20 @@
 <h1>Welcome to Signuper, all we do is Signning you up all day long!</h1>
 
 <h2>wohoo, you have signed up! This is user page</h2>
+
+<h1>photo photo</h1>
+
+<%= render :partial => "photos/new_photo_form", :locals => { :photo => Photo.new } %>
+
+<% if @photos.empty? %>
+  <h3>No photos. :(</h3>
+<% else %>
+  <ul class="photo-list">
+    <% @photos.each do |photo| %>
+      <li><%= image_tag(photo.picture_url.gallery_fit.url) %></li>
+      <li><%= image_tag(photo.picture_url.gallery_fill.url) %></li>
+      <li><%= image_tag(photo.picture_url.gallery_limit.url) %></li>
+      <li><%= image_tag(photo.picture_url.gallery_pad.url) %></li>
+    <% end %>
+  </ul>
+<% end %>

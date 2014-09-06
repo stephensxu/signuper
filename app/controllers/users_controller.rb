@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    current_user
+    @photos = current_user.photos
     render :show
   end
 
