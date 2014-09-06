@@ -17,4 +17,6 @@ class Photo < ActiveRecord::Base
   belongs_to :user
 
   mount_uploader :picture_url, PhotoUploader
+  validates :picture_url, :presence => true, 
+            :file_size => { :maximum => 0.1.megabyes.to_i }
 end
