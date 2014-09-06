@@ -34,6 +34,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def send_welcome_email
+    UserMailer.welcome_email(current_user).deliver
+    redirect_to root_path
+  end
+
   private
 
   def require_authorization!
