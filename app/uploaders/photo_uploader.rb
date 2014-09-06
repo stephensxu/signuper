@@ -29,7 +29,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   version :gallery_pad do
-    process :resize_and_pad => [400, 400, "blue", "center"]
+    process :resize_and_pad => [400, 400, "white", "center"]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
