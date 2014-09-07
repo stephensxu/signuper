@@ -1,9 +1,10 @@
 class UserMailer < ActionMailer::Base
-  default :from => "hell@couchfoodie.com"
+  default :from => "stephensxub@gmail.com"
 
-  def welcome_email
+  def welcome_email(user)
+    @user = user
     mail :subject => "Mandrill rides the Rails!",
-         :to      => current_user.email,
-         :from    => "hello@couchfoodie.com"
+         :to      => user.email,
+         :from    => "stephensxub@gmail.com"
   end
 end
