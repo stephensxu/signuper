@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   root :to => 'users#index'
 
-  resources :users, :except => :destroy
+  resources :users, :except => :destroy do
+    get '/welcome_email',           :action => 'send_welcome_email', :as => 'welcome_email'
+  end
 
   resources :photos, :only => [:create]
 

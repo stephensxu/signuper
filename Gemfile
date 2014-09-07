@@ -24,6 +24,7 @@ gem 'omniauth'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'carrierwave-aws'
+gem 'mandrill-api'
 
 group :development do
   # Spring speeds up development by keeping your application running in the

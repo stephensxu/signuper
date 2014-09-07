@@ -4,7 +4,9 @@
 <div class="user_image">
   <img src="<%= current_user.image %>" alt="Siley face">
 </div>
-<%= link_to 'Logout', logout_path %>
+<%= link_to 'Logout', logout_path %><br>
+
+<%= link_to 'Send myself welcome email', user_welcome_email_path(current_user) %><br>
 
 <h1>Welcome to Signuper, all we do is Signning you up all day long!</h1>
 
